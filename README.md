@@ -4,7 +4,7 @@
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/react-candidate-test.git
+   git clone https://github.com/shivvyas2/react-candidate-test.git
    cd react-candidate-test
    ```
 
