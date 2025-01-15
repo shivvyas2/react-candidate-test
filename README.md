@@ -1,3 +1,59 @@
+
+
+# React Candidate Test
+
+Welcome! This project is designed to test your React knowledge and skills. Please follow the instructions below to complete the task.
+
+## Setup
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/shivvyas2/react-candidate-test.git
+   cd react-candidate-test
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+   or
+   ```bash
+   yarn install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+   or
+   ```bash
+   yarn start
+   ```
+
+## Task
+
+### 1. Objective
+Improve and add features to the application.
+
+### 2. Instructions
+- Refactor the Header component to include a dropdown menu
+- Add a feature to fetch and display data from a public API (e.g., GitHub users or JSONPlaceholder)
+
+
+### 3. Bonus Points
+- Use TypeScript
+- Add unit tests with Jest
+- Improve project structure or add comments for clarity
+
+## Submission
+
+1. Commit your changes with meaningful commit messages
+2. Push the changes to a **new branch** (e.g., `feature-yourname`)
+3. Create a pull request to the main branch of this repository
+
+
+
+
 # React Project Documentation
 
 ## Getting Started
