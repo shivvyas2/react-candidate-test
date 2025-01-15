@@ -1,52 +1,4 @@
-# React Candidate Test Setup Guide
 
-## Step 1: Set Up the Repository
-
-### Create a Repository on GitHub
-1. Go to GitHub
-2. Click **New Repository**
-3. Name it `react-candidate-test` (or your preferred name)
-4. Set the repository to **Public** (or Private if you want limited access)
-5. Initialize the repository with a README.md
-
-### Clone the Repository
-```bash
-git clone https://github.com/shivvyas2/react-candidate-test.git
-cd react-candidate-test
-```
-
-## Step 2: Add the Project
-
-### Copy Project Files
-1. Copy your React project files into the repository directory
-   - Exclude large files or sensitive data
-   - Ensure `node_modules` is excluded
-
-### Set Up Git Configuration
-1. Create or update `.gitignore` with common React exclusions:
-   ```
-   node_modules/
-   .env
-   build/
-   .DS_Store
-   coverage/
-   ```
-
-2. Initialize Git and push your project:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit for React candidate test"
-   git branch -M main
-   git remote add origin https://github.com/your-username/react-candidate-test.git
-   git push -u origin main
-   ```
-
-## Step 3: Create Instructions for Candidates
-
-# React Candidate Test
-
-Welcome! This project is designed to test your React knowledge and skills. Please follow the instructions below to complete the task.
 
 ## Setup
 
@@ -87,7 +39,6 @@ Improve and add features to the application.
 
 ### 3. Bonus Points
 - Use TypeScript
-- Add unit tests with Jest
 - Improve project structure or add comments for clarity
 
 ## Submission
