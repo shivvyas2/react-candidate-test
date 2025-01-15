@@ -233,7 +233,7 @@ For a complete list of dependencies, refer to package.json.
 
 
 ## .env Settings
-
+```env
 VITE_FIREBASE_APT_KEY=AIzaSyBoUdiDtzQdC-m4nj9CPY5SvY7uKJGL71k
 VITE_FIREBASE_AUTH_DOMAIN=matx-15ede.firebaseapp.com
 VITE_FIREBASE_DATABASE_URL=https://matx-15ede.firebaseio.com
@@ -245,3 +245,4 @@ VITE_FIREBASE_MEASUREMENT_ID=G-806629YLNN
 VITE_AUTH0_CLIENT_ID=XmminWIs0S8gR3gIRBydYLWbF58x81vK
 VITE_AUTH0_DOMAIN=matx.us.auth0.com
 GENERATE_SOURCEMAP=false
+```
