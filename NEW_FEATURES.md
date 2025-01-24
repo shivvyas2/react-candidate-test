@@ -18,8 +18,8 @@
 - Error state management
 - Comprehensive unit tests
 
-![alt text](./screenshots/image-3.png)
-![alt text](./screenshots/image-4.png)
+![alt text](./screenshots/github1.png)
+![alt text](./screenshots/github2.png)
 
 
 
