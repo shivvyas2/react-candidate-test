@@ -2,6 +2,8 @@ import { lazy } from 'react';
 import Loadable from './Loadable';
 import { Outlet } from 'react-router-dom';
 import RootLayout from '@/layouts/root/RootLayout';
+import Navigation from '@/layouts/root/Navigation';
+import { Box, Container } from '@mui/material';
 
 // PAGES
 const Landing = Loadable(lazy(() => import('@/pages/landing')));
@@ -31,16 +33,31 @@ export const PublicRoutes = [
     element: <Landing />
   },
   {
-    path: '/features/github-users',
-    element: <GitHubUsers />
-  },
-  {
-    path: '/features/posts',
-    element: <Posts />
-  },
-  {
-    path: '/features/weather',
-    element: <Weather />
+    path: '/features',
+    element: (
+      <RootLayout>
+        <Box sx={{ bgcolor: 'primary.dark', color: 'white' }}>
+          <Container maxWidth="lg">
+            <Navigation />
+          </Container>
+        </Box>
+        <Outlet />
+      </RootLayout>
+    ),
+    children: [
+      {
+        path: 'github-users',
+        element: <GitHubUsers />
+      },
+      {
+        path: 'posts',
+        element: <Posts />
+      },
+      {
+        path: 'weather',
+        element: <Weather />
+      }
+    ]
   },
   {
     path: 'permission',
