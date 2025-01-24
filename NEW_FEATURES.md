@@ -8,7 +8,7 @@
 - Error handling for API failures
 - Unit tests for component behavior
 
-![Weather Component Screenshot](./screenshots/image.png)
+![alt text](./screenshots/weather.png)
 
 ## 2. GitHub Users Component
 - Fetch and display GitHub users data
@@ -30,8 +30,8 @@
 - Error handling
 - Unit tests for component functionality
 
-![alt text](./screenshots/image-1.png)
-![alt text](./screenshots/image-2.png)
+![alt text](./screenshots/json1.png)
+![alt text](./screenshots/json2.png)
 
 
 ## 4. Testing Infrastructure
