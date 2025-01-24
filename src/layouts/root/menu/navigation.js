@@ -87,7 +87,7 @@ export const PAGES_MENUS = [{
     href: '/cart'
   }]
 }, {
-  id: 3,
+  id: 4,
   title: 'Session',
   child: [{
     id: 1,

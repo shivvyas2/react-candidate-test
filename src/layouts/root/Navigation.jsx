@@ -10,14 +10,20 @@ import ListItem from '@mui/material/ListItem';
 import IconButton from '@mui/material/IconButton';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import ListItemButton from '@mui/material/ListItemButton';
-import styled from '@mui/material/styles/styled'; // MUI ICON COMPONENT
+import styled from '@mui/material/styles/styled';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+
+// MUI ICON COMPONENT
 
 import Menu from '@mui/icons-material/Menu'; // CUSTOM COMPONENTS
 
 import Link from '@/components/link';
 import Scrollbar from '@/components/scrollbar';
 import MegaMenu from './menu/MegaMenu';
-import MegaMenuList from './menu/MegaMenuList'; // CUSTOM ICON COMPONENT
+import MegaMenuList from './menu/MegaMenuList';
+import { Span } from '@/components/typography';
+import FlexBox from '@/components/flexbox/FlexBox'; // CUSTOM ICON COMPONENT
 
 import ChevronDown from '@/icons/ChevronDown'; // NAVIGATION LIST
 
@@ -60,11 +66,22 @@ const StyledNavItem = styled(Link, {
     color: theme.palette.primary.main
   })
 }));
+const MAIN_NAV_ITEMS = [
+  { title: 'Home', path: '/' },
+  { title: 'Features', items: [
+    { title: 'GitHub Users', path: '/features/github-users' },
+    { title: 'JSONPlaceholder Posts', path: '/features/posts' },
+    { title: 'Weather API', path: '/features/weather' }
+  ]},
+  { title: 'Components', path: '/components' }
+];
+import { MainListItem, MenusContainer } from './menu/styles';
 export default function Navigation() {
   const {
     pathname
   } = useLocation();
   const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(null);
   const [collapsed, setCollapsed] = useState(false);
   const isMedium = useMediaQuery(theme => theme.breakpoints.up('md'));
 
@@ -80,17 +97,52 @@ export default function Navigation() {
         Home
       </StyledNavItem>
 
-      {
-      /* PAGES MEGA MENU */
-    }
+      {/* PAGES MEGA MENU */}
       <MegaMenu isDark={isComponentsRoute} />
 
       <StyledNavItem href="/components" isDark={isComponentsRoute} isActive={isActive('/components')}>
         Components
       </StyledNavItem>
 
+      {/* FEATURES MEGA MENU */}
+      <MainListItem>
+        <FlexBox alignItems="center" className="menu-item" color={isComponentsRoute ? 'text.primary' : 'white'} sx={{
+          cursor: 'pointer'
+        }}>
+          <Span>Features</Span> <ChevronDown sx={{
+            fontSize: 19,
+            ml: 0.3
+          }} />
+        </FlexBox>
 
-    
+        <MenusContainer className="inner-menu">
+          <Card sx={{
+            px: 3,
+            py: 4,
+            mt: 1.5,
+            width: '100%'
+          }}>
+            <Grid container spacing={3}>
+              <Grid size={4}>
+                <MegaMenuList 
+                  title="Features" 
+                  child={[
+                    { id: 1, title: 'GitHub Users', href: '/features/github-users' },
+                    { id: 2, title: 'JSONPlaceholder Posts', href: '/features/posts' },
+                    { id: 3, title: 'Weather API', href: '/features/weather' }
+                  ]} 
+                  sx={{
+                    '& .MuiList-root': {
+                      pl: 2
+                    }
+                  }}
+                />
+              </Grid>
+            </Grid>
+          </Card>
+        </MenusContainer>
+      </MainListItem>
+
     </StyledNav>; // FOR SMALL AND MEDIUM SCREEN DEVICE
 
   const SMALL_DEVICE_CONTENT = <Fragment>
@@ -144,6 +196,42 @@ export default function Navigation() {
               <ListItemButton LinkComponent={Link} href="/components">
                 Components
               </ListItemButton>
+            </ListItem>
+
+            <ListItem disablePadding sx={{
+            flexDirection: 'column',
+            alignItems: 'start'
+          }}>
+              <ListItemButton onClick={() => setOpenMenu('Features')} sx={{
+              width: '100%',
+              justifyContent: 'space-between'
+            }}>
+                Features{' '}
+                <ChevronDown sx={{
+                rotate: openMenu === 'Features' ? '180deg' : 0,
+                transition: 'rotate 300ms'
+              }} />
+              </ListItemButton>
+
+              <Collapse in={openMenu === 'Features'}>
+                <Box px={2} py={1.5}>
+                  <ListItem disablePadding>
+                    <ListItemButton LinkComponent={Link} href="/features/github-users">
+                      GitHub Users
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton LinkComponent={Link} href="/features/posts">
+                      JSONPlaceholder Posts
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton LinkComponent={Link} href="/features/weather">
+                      Weather API
+                    </ListItemButton>
+                  </ListItem>
+                </Box>
+              </Collapse>
             </ListItem>
 
             <ListItem disablePadding>
