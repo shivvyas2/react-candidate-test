@@ -1,0 +1,1 @@
+import{s as e,a as s,a0 as o,r as p,j as i}from"./index-DiONe1dj.js";const n=e(s)(({theme:r})=>({width:40,height:40,display:"flex",alignItems:"center",justifyContent:"center",borderRadius:"5px",marginRight:"0.5rem",backgroundColor:o(r.palette.primary.main,.1)})),x=p.forwardRef(({children:r,...a},t)=>i.jsx(n,{ref:t,...a,children:r}));export{x as I};

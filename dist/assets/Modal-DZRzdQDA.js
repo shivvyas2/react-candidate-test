@@ -1,0 +1,1 @@
+import{j as r,bD as l}from"./index-DiONe1dj.js";import{W as t,S as n}from"./styles-BYXuOmOi.js";function x({children:o,open:s,handleClose:a,...e}){return r.jsx(l,{open:s,onClose:a,children:r.jsx(t,{...e,children:r.jsx(n,{children:o})})})}export{x as M};

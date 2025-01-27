@@ -1,0 +1,1 @@
+import{s as n,j as r}from"./index-DiONe1dj.js";const a=n("span")(({theme:t})=>({background:"linear-gradient(90deg, #6950E8 21.75%, #FA03AA 73.2%)",backgroundClip:"text",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}));function s({children:t,...e}){return r.jsx(a,{...e,children:t})}export{s as F};

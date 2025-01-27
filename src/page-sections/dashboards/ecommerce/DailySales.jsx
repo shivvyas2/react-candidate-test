@@ -54,7 +54,7 @@ export default function DailySales() {
             <Span fontWeight={500} fontSize={18} color="grey.400">
               $
             </Span>
-            {format(51352)}
+            {format(650)}
           </H6>
           <Percentage type="success">+12.5%</Percentage>
         </FlexBox>

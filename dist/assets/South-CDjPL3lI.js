@@ -1,0 +1,1 @@
+import{e as t,j as o}from"./index-DiONe1dj.js";const h=t(o.jsx("path",{d:"m5 9 1.41 1.41L11 5.83V22h2V5.83l4.59 4.59L19 9l-7-7z"}),"North"),a=t(o.jsx("path",{d:"m19 15-1.41-1.41L13 18.17V2h-2v16.17l-4.59-4.59L5 15l7 7z"}),"South");export{h as N,a as S};

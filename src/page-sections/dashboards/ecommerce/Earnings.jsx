@@ -21,7 +21,7 @@ export default function Earnings() {
             <Span fontWeight={500} fontSize={18} color="grey.400">
               $
             </Span>
-            {format(20360)}
+            {format(690)}
           </H6>
 
           <Percentage type="error">-2.2%</Percentage>

@@ -1,0 +1,1 @@
+import{s as o,a as r,K as t}from"./index-DiONe1dj.js";const s=o(r)(({theme:a})=>({top:"50%",left:"50%",maxWidth:680,width:"100%",borderRadius:16,overflow:"hidden",position:"absolute",transform:"translate(-50%, -50%)",backgroundColor:a.palette.background.paper,[a.breakpoints.down(575)]:{maxWidth:"85dvw"}})),e=o(t)({padding:24,maxHeight:"85dvh"});export{e as S,s as W};

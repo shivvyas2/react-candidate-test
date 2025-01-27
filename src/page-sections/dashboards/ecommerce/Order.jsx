@@ -17,7 +17,7 @@ export default function Order() {
   }}>
       <div>
         <FlexBox alignItems="center" gap={1}>
-          <H6>{format(1352)}</H6>
+          <H6>{format(600)}</H6>
           <Percentage type="error">-2.2%</Percentage>
         </FlexBox>
 

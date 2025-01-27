@@ -12,7 +12,7 @@ export default function DailyVisitors() {
   return <Card className="p-3">
       <div>
         <FlexBox alignItems="center" gap={1}>
-          <H6>{format(1352)}</H6>
+          <H6>{format(600)}</H6>
           <Percentage type="primary">+12.5%</Percentage>
         </FlexBox>
 
