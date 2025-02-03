@@ -116,6 +116,7 @@ export default function Layout({
           <Tab disableRipple label="Documents" value="4" />
           <Tab disableRipple label="Connections" value="5" />
           <Tab disableRipple label="Activity" value="6" />
+          <Tab disableRipple label="User Details" value="7" />
         </StyledTabList>
       </Card>
 
