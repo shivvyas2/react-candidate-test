@@ -1,21 +1,23 @@
-import { useState } from 'react'; // MUI
-
+import { useState } from 'react'; 
 import TabPanel from '@mui/lab/TabPanel';
-import TabContext from '@mui/lab/TabContext'; // CUSTOM PAGE SECTION COMPONENTS
+import TabContext from '@mui/lab/TabContext'; 
 
 import Layout from '../Layout';
-import Overview from '../overview';
-import Projects from '../projects';
-import Activity from '../activity';
-import Campaigns from '../campaigns';
-import Documents from '../documents';
-import Connections from '../connections';
+import Overview from '../overview/index';
+import Projects from '../projects/Projects';
+import Activity from '../activity/Activity';
+import Campaigns from '../campaigns/Campaigns';
+import Documents from '../documents/Documents';
+import Connections from '../connections/Connections';
+import UserDetails from '../user-details/UserDetails';
+
 export default function ProfilePageView() {
   const [tabValue, setTabValue] = useState('1');
 
   const handleTabChange = (_, value) => setTabValue(value);
 
-  return <div className="pt-2 pb-4">
+  return (
+    <div className="pt-2 pb-4">
       <TabContext value={tabValue}>
         <Layout handleTabList={handleTabChange}>
           <TabPanel value="1">
@@ -41,7 +43,12 @@ export default function ProfilePageView() {
           <TabPanel value="6">
             <Activity />
           </TabPanel>
+
+          <TabPanel value="7">
+            <UserDetails />
+          </TabPanel>
         </Layout>
       </TabContext>
-    </div>;
+    </div>
+  );
 }
