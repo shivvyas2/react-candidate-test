@@ -13,6 +13,8 @@
   - Responsive design with Material-UI components
   - Score range display (0-700)
 
+![alt text](images/image-1.png)
+
 ## 2. API Integration Features
 
 ### JsonPlaceholder API Integration
@@ -66,13 +68,13 @@
     }
     ```
   - Profile data fetching with error handling
-
+![alt text](images/image-2.png)
 ## 3. APIs used in Dashboard
 - JsonPlaceholder
 - Pokemon
 - Weather
-
-
+![alt text](images/image-8.png)
+![alt text](images/image-9.png)
 ### 1. Weather API
 - **Component**: `Weather.tsx`
 - **Endpoint**: https://api.weatherapi.com/v1/
@@ -98,7 +100,9 @@
   - Weather conditions with icons
   - Humidity and wind information
   - Interactive world map with major cities
-
+![alt text](images/image-3.png)
+![alt text](images/image-4.png)
+![alt text](images/image-5.png)
 ### 2. Pokemon API
 - **Component**: `Pokemon.tsx`
 - **Endpoint**: https://pokeapi.co/api/v2/
@@ -119,7 +123,7 @@
   - Error handling
   - Loading states
   - Responsive design
-
+![alt text](images/image-6.png)
 ### 3. JSONPlaceholder API
 - **Component**: `JsonPlaceholder.tsx`
 - **Endpoint**: https://jsonplaceholder.typicode.com/
@@ -143,7 +147,7 @@
   - Responsive layout
   - Loading states
   - Error handling
-
+![alt text](images/image-7.png)
 ## 4. Technical Implementation Details
 
 ### State Management
@@ -171,82 +175,8 @@
 - Search functionality
 - Expandable/collapsible sections
 
-## 5. API Documentation
-
-### 1. Weather API
-- **Component**: `Weather.tsx`
-- **Endpoint**: https://api.weatherapi.com/v1/
-- **React Hooks Used**:
-  - useState for managing:
-    - searchInput
-    - suggestions
-    - weather data
-    - loading states
-    - error handling
-    - selected tab
-    - last updated time
-    - world temperatures
-  - useEffect for initial data fetching
-- **Features**:
-  - Location search with autocomplete
-  - Current weather conditions
-  - 7-day forecast
-  - World temperature map
-  - Geolocation support
-  - Temperature in Celsius and Fahrenheit
-  - Weather conditions with icons
-  - Humidity and wind information
-  - Interactive world map with major cities
-
-### 2. Pokemon API
-- **Component**: `Pokemon.tsx`
-- **Endpoint**: https://pokeapi.co/api/v2/
-- **React Hooks Used**:
-  - useState for:
-    - Pokemon data
-    - Loading states
-    - Error handling
-    - Search input
-  - useEffect for data fetching
-- **Features**:
-  - Pokemon search functionality
-  - Display Pokemon details:
-    - Name and ID
-    - Sprite/Image
-    - Types
-    - Base stats
-  - Error handling
-  - Loading states
-  - Responsive design
-
-### 3. JSONPlaceholder API
-- **Component**: `JsonPlaceholder.tsx`
-- **Endpoint**: https://jsonplaceholder.typicode.com/
-- **React Hooks Used**:
-  - useState for:
-    - Posts data
-    - Users data
-    - Comments
-    - Loading states
-    - Pagination
-    - Sorting
-    - Search term
-  - useEffect for initial data load
-  - useTransition for performance optimization
-- **Features**:
-  - User profile display
-  - Post listing with pagination
-  - Comment threading
-  - Search functionality
-  - Sort capabilities
-  - Responsive layout
-  - Loading states
-  - Error handling
-
-Each API component is built using Material-UI components and follows React best practices for state management and error handling. The components are designed to be modular and reusable, with clear separation of concerns and type safety through TypeScript.
-
-## 6. Testing Infrastructure
-
+## 5. Testing Infrastructure
+![alt text](images/image-10.png)
 ### Jest Configuration
 ```javascript
 // jest.config.js
@@ -326,31 +256,11 @@ import '@testing-library/jest-dom';
    - State snapshots
    - Error boundary testing
 
-### Testing Best Practices
-- Use React Testing Library's user-centric queries
-- Implement proper error boundary testing
-- Mock external dependencies
-- Use proper async/await testing patterns
-- Implement proper cleanup after tests
-- Use meaningful test descriptions
-- Follow the Arrange-Act-Assert pattern
-- Test both success and failure scenarios
+## 6. Navigation and Routing
+- Added new routes for features
+- Updated navigation menu
 
-### Continuous Integration
-- Tests run on every pull request
-- Coverage reports generation
-- Automated test execution
-- Performance testing integration
-
-## 7. Testing
-- Jest testing framework implementation
-- React Testing Library integration
-- Component unit tests
-- API integration tests
-- Loading state tests
-- Error handling tests
-
-## 8. Additional Notes
+## 7. Additional Notes
 
 ### Development Environment
 - React with TypeScript
@@ -358,12 +268,3 @@ import '@testing-library/jest-dom';
 - Jest and React Testing Library for testing
 - Modern ES6+ JavaScript features
 - Responsive design principles
-
-### Best Practices Implemented
-- Component-based architecture
-- Type-safe development with TypeScript
-- Efficient state management
-- Responsive and accessible UI
-- Comprehensive error handling
-- Performance optimizations
-- Clean and maintainable code structure
