@@ -11,6 +11,8 @@ import TopProducts from '../TopProducts';
 import RecentOrders from '../RecentOrders';
 import DailyVisitors from '../DailyVisitors';
 import CustomerReview from '../CustomerReview';
+import ScoreDisplay from '../ScoreDisplay';
+
 export default function EcommercePageView() {
   return <div className="pt-2 pb-4">
       <Grid container spacing={3}>
@@ -45,6 +47,15 @@ export default function EcommercePageView() {
         xs: 12
       }}>
           <Order />
+        </Grid>
+
+        {/* SCORE DISPLAY CARD */}
+        <Grid size={{
+        lg: 3,
+        sm: 6,
+        xs: 12
+      }}>
+          <ScoreDisplay />
         </Grid>
 
         {

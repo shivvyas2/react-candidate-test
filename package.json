@@ -1,14 +1,15 @@
 {
   "name": "essence-vite",
+  "type": "module",
   "private": true,
   "version": "3.2.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "fix:prettier": "prettier --write . '!.next' '!.node_modules' '!tools/output/**/.next'"
+    "fix:prettier": "prettier --write . '!.next' '!.node_modules' '!tools/output/**/.next'",
+    "test": "jest"
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^2.1.3",
@@ -27,6 +28,7 @@
     "apexcharts": "^3.53.0",
     "aws-amplify": "^6.6.2",
     "axios": "^1.7.7",
+    "d3-scale": "^4.0.2",
     "date-fns": "^4.1.0",
     "firebase": "^10.13.2",
     "formik": "^2.4.6",
@@ -41,6 +43,7 @@
     "react-i18next": "^15.0.2",
     "react-otp-input": "^3.1.1",
     "react-router-dom": "^6.26.2",
+    "react-simple-maps": "^3.0.0",
     "react-slick": "^0.30.2",
     "simplebar-react": "^3.2.6",
     "slick-carousel": "^1.8.1",
@@ -49,7 +52,13 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.26.7",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.26.0",
     "@eslint/js": "^9.9.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@types/jest": "^29.5.14",
     "@types/lodash.merge": "^4.6.9",
     "@types/node": "^22.5.5",
     "@types/nprogress": "^0.2.3",
@@ -60,10 +69,14 @@
     "@typescript-eslint/eslint-plugin": "^8.6.0",
     "@typescript-eslint/parser": "^8.6.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "babel-jest": "^29.7.0",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "prettier": "3.3.3",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",

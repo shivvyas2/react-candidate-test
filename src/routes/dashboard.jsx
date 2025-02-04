@@ -69,6 +69,11 @@ const ProjectV3 = Loadable(lazy(() => import('@/pages/dashboard/projects/version
 const ProjectDetails = Loadable(lazy(() => import('@/pages/dashboard/projects/details')));
 const TeamMember = Loadable(lazy(() => import('@/pages/dashboard/projects/team-member')));
 
+import Weather from '@/page-sections/apis/weather/Weather';
+import Pokemon from '@/page-sections/apis/pokemon/Pokemon';
+const JsonPlaceholder = lazy(() => import("../page-sections/apis/jsonplaceholder/JsonPlaceholder"));
+import ErrorBoundary from '../components/ErrorBoundary';
+
 const ActiveLayout = () => {
   const {
     settings
@@ -81,158 +86,222 @@ export const DashboardRoutes = [{
   element: <AuthGuard>
         <ActiveLayout />
       </AuthGuard>,
+  errorElement: <ErrorBoundary />,
   children: [{
     index: true,
-    element: <Analytics />
+    element: <Analytics />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'crm',
-    element: <CRM />
+    element: <CRM />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'crm-2',
-    element: <CRMV2 />
+    element: <CRMV2 />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'sales',
-    element: <Sales />
+    element: <Sales />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'sales-2',
-    element: <SalesV2 />
+    element: <SalesV2 />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'finance',
-    element: <Finance />
+    element: <Finance />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'finance-2',
-    element: <FinanceV2 />
+    element: <FinanceV2 />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'ecommerce',
-    element: <Ecommerce />
+    element: <Ecommerce />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'logistics',
-    element: <Logistics />
+    element: <Logistics />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'marketing',
-    element: <Marketing />
+    element: <Marketing />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'analytics-2',
-    element: <AnalyticsV2 />
+    element: <AnalyticsV2 />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'learning-management',
-    element: <LMS />
+    element: <LMS />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'job-management',
-    element: <JobManagement />
+    element: <JobManagement />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'add-user',
-    element: <AddNewUser />
+    element: <AddNewUser />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'user-list',
-    element: <UserListView />
+    element: <UserListView />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'user-grid',
-    element: <UserGridView />
+    element: <UserGridView />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'user-list-2',
-    element: <UserListView2 />
+    element: <UserListView2 />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'user-grid-2',
-    element: <UserGridView2 />
+    element: <UserGridView2 />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'account',
-    element: <Account />
+    element: <Account />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'invoice-list',
-    element: <InvoiceList />
+    element: <InvoiceList />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'create-invoice',
-    element: <InvoiceCreate />
+    element: <InvoiceCreate />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'invoice-details',
-    element: <InvoiceDetails />
+    element: <InvoiceDetails />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'product-list',
-    element: <ProductList />
+    element: <ProductList />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'product-grid',
-    element: <ProductGrid />
+    element: <ProductGrid />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'create-product',
-    element: <ProductCreate />
+    element: <ProductCreate />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'product-details',
-    element: <ProductDetails />
+    element: <ProductDetails />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'cart',
-    element: <Cart />
+    element: <Cart />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'payment',
-    element: <Payment />
+    element: <Payment />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'billing-address',
-    element: <BillingAddress />
+    element: <BillingAddress />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'payment-complete',
-    element: <PaymentComplete />
+    element: <PaymentComplete />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'profile',
-    element: <Profile />
+    element: <Profile />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'data-table-1',
-    element: <DataTable1 />
+    element: <DataTable1 />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'about',
-    element: <About />
+    element: <About />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'career',
-    element: <Career />
+    element: <Career />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'file-manager',
-    element: <FileManager />
+    element: <FileManager />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'support',
-    element: <Support />
+    element: <Support />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'create-ticket',
-    element: <CreateTicket />
+    element: <CreateTicket />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'chat',
-    element: <Chat />
+    element: <Chat />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'todo-list',
-    element: <TodoList />
+    element: <TodoList />,
+    errorElement: <ErrorBoundary />
   }, {
     path: 'mail',
     children: [{
       path: 'all',
-      element: <AllMail />
+      element: <AllMail />,
+      errorElement: <ErrorBoundary />
     }, {
       path: 'inbox',
-      element: <Inbox />
+      element: <Inbox />,
+      errorElement: <ErrorBoundary />
     }, {
       path: 'sent',
-      element: <Sent />
+      element: <Sent />,
+      errorElement: <ErrorBoundary />
     }, {
       path: 'compose',
-      element: <Compose />
+      element: <Compose />,
+      errorElement: <ErrorBoundary />
     }, {
       path: 'details',
-      element: <MailDetails />
+      element: <MailDetails />,
+      errorElement: <ErrorBoundary />
     }]
   }, {
     path: 'projects',
     children: [{
       path: 'version-1',
-      element: <ProjectV1 />
+      element: <ProjectV1 />,
+      errorElement: <ErrorBoundary />
     }, {
       path: 'version-2',
-      element: <ProjectV2 />
+      element: <ProjectV2 />,
+      errorElement: <ErrorBoundary />
     }, {
       path: 'version-3',
-      element: <ProjectV3 />
+      element: <ProjectV3 />,
+      errorElement: <ErrorBoundary />
     }, {
       path: 'details',
-      element: <ProjectDetails />
+      element: <ProjectDetails />,
+      errorElement: <ErrorBoundary />
     }, {
       path: 'team-member',
-      element: <TeamMember />
+      element: <TeamMember />,
+      errorElement: <ErrorBoundary />
     }]
-  }]
+  }, {
+    path: 'weather',
+    element: <Weather />,
+    errorElement: <ErrorBoundary />
+  }, {
+    path: 'pokemon',
+    element: <Pokemon />,
+    errorElement: <ErrorBoundary />
+  },
+  {
+    path: 'jsonplaceholder',
+    element: <JsonPlaceholder />,
+    errorElement: <ErrorBoundary />
+  },
+  ]
 }];
