@@ -41,33 +41,9 @@
   - Refresh functionality to reload data
 
 - **Features**:
-  - User information display:
-    ```typescript
-    interface User {
-      id: number;
-      name: string;
-      username: string;
-      email: string;
-      address: {
-        street: string;
-        suite: string;
-        city: string;
-        zipcode: string;
-        geo: {
-          lat: string;
-          lng: string;
-        };
-      };
-      phone: string;
-      website: string;
-      company: {
-        name: string;
-        catchPhrase: string;
-        bs: string;
-      };
-    }
-    ```
+  
   - Profile data fetching with error handling
+  - Search functionality for posts and users
 ![alt text](images/image-2.png)
 ## 3. APIs used in Dashboard
 - JsonPlaceholder
@@ -75,6 +51,8 @@
 - Weather
 ![alt text](images/image-8.png)
 ![alt text](images/image-9.png)
+
+The display is dynamic and I have changed this a bit than the provided one for better experience . 
 ### 1. Weather API
 - **Component**: `Weather.tsx`
 - **Endpoint**: https://api.weatherapi.com/v1/
@@ -124,6 +102,8 @@
   - Loading states
   - Responsive design
 ![alt text](images/image-6.png)
+![alt text](images/image.png)
+
 ### 3. JSONPlaceholder API
 - **Component**: `JsonPlaceholder.tsx`
 - **Endpoint**: https://jsonplaceholder.typicode.com/
@@ -148,6 +128,8 @@
   - Loading states
   - Error handling
 ![alt text](images/image-7.png)
+![alt text](images/image-11.png)
+![alt text](images/image-12.png)
 ## 4. Technical Implementation Details
 
 ### State Management
@@ -177,26 +159,6 @@
 
 ## 5. Testing Infrastructure
 ![alt text](images/image-10.png)
-### Jest Configuration
-```javascript
-// jest.config.js
-export default {
-  testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  moduleNameMapper: {
-    '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-  },
-  transform: {
-    '^.+\\.(ts|tsx|js|jsx)$': 'babel-jest',
-  },
-};
-```
-
-### Test Setup
-```javascript
-// jest.setup.js
-import '@testing-library/jest-dom';
-```
 
 ### Component Test Cases
 
