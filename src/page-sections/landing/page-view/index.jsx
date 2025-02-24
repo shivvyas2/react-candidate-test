@@ -7,44 +7,47 @@ import Section2 from '../Section2';
 import Section3 from '../Section3';
 import Section4 from '../Section4';
 import Header from '@/layouts/root/Navigation';
+import UserList from '../Section1.5'; 
+
 export default function LandingPageView() {
-  return <Box sx={{
-    height: '100%',
-    overflowX: 'hidden',
-    backgroundColor: 'background.default'
-  }}>
-      {
-      /* DARK HEADER AREA */
-    }
+  return (
+    <Box
+      sx={{
+        height: '100%',
+        overflowX: 'hidden',
+        backgroundColor: 'background.default'
+      }}
+    >
+      {/* DARK HEADER AREA */}
       <Box bgcolor="#1C113D">
         <Container maxWidth="lg">
           <Header />
         </Container>
       </Box>
 
-      {
-      /* ONION HERO AREA */
-    }
+      {/* ONION HERO AREA */}
       <Section1 />
 
-      {
-      /* CORE FEATURES AREA */
-    }
+       {/* USER LIST AREA */}
+       <Box sx={{ py: 4, backgroundColor: 'background.paper' }}>
+        <Container maxWidth="lg">
+          <UserList />
+        </Container>
+      </Box>
+
+
+      {/* CORE FEATURES AREA */}
       <Section2 />
 
-      {
-      /* VAST COLLECTION COMPONENTS AREA */
-    }
+      {/* VAST COLLECTION COMPONENTS AREA */}
       <Section3 />
 
-      {
-      /* APPS & PAGES AREA */
-    }
+      {/* APPS & PAGES AREA */}
       <Section4 />
 
-      {
-      /* FOOTER AREA */
-    }
+     
+      {/* FOOTER AREA */}
       <Footer />
-    </Box>;
+    </Box>
+  );
 }
