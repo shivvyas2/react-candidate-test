@@ -24,7 +24,7 @@ import { PAGES_MENUS } from './menu/navigation'; // STYLED COMPONENT
 
 
 
-// Styled components
+// Main header container with responsive layout
 const StyledRoot = styled('header')(({ theme }) => ({
   paddingBlock: theme.spacing(2),
   display: 'flex',
@@ -32,6 +32,7 @@ const StyledRoot = styled('header')(({ theme }) => ({
   justifyContent: 'space-between'
 }));
 
+// Desktop navigation container with flex layout
 const StyledNav = styled('nav')(({ theme }) => ({
   display: 'flex',
   fontSize: 14,
@@ -55,9 +56,11 @@ const StyledNavItem = styled(Link, {
   ...(isActive && { color: theme.palette.primary.main })
 }));
 
+
+// Dropdown menu container positioned absolutely below nav items
 const DropdownContainer = styled(Box)(({ theme }) => ({
   position: 'absolute',
-  top: '100%', // directly below the parent, without extra margin
+  top: '100%', 
   left: 0,
   backgroundColor: theme.palette.background.paper,
   boxShadow: theme.shadows[3],
@@ -69,12 +72,12 @@ const DropdownContainer = styled(Box)(({ theme }) => ({
 
 
 function DropdownNavItem({ menu, isDark }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // Controls dropdown visibility
 
   return (
     <Box
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={() => setOpen(true)}    // Desktop hover interaction
+      onMouseLeave={() => setOpen(false)}   // Close on mouse out
       sx={{ position: 'relative', display: 'inline-block' }}
     >
       <StyledNavItem
@@ -109,13 +112,13 @@ export default function Navigation() {
   const isMedium = useMediaQuery(theme => theme.breakpoints.up('md'));
   const isComponentsRoute = pathname.startsWith('/components');
 
-  // Mobile: track collapse state for each menu
+  // Track collapsed state for each mobile menu item
   const [collapsedMenus, setCollapsedMenus] = useState({});
   const toggleCollapse = id => {
     setCollapsedMenus(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
-  // Close drawer on larger screens
+  // Auto-close drawer when resizing to desktop
   useEffect(() => {
     if (isMedium) setDrawerOpen(false);
   }, [isMedium]);
@@ -219,6 +222,7 @@ export default function Navigation() {
       <Link href="/">
         <img src="/static/logo/logo-svg.svg" alt="logo" width={35} height={35} />
       </Link>
+      {/* Conditional rendering based on screen size */}
       {isMedium ? LARGE_DEVICE_CONTENT : SMALL_DEVICE_CONTENT}
     </StyledRoot>
   );

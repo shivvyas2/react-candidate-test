@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { FaEnvelope } from 'react-icons/fa';
 
+
+// Define the shape of a user object using TypeScript interface
 interface User {
   id: number;
   name: string;
@@ -9,10 +11,13 @@ interface User {
 }
 
 const UserList: React.FC = () => {
+  // States to store the list of users, loading status and errors
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+
+  // Fetch users from JSONPlaceholder API on component mount
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -20,6 +25,7 @@ const UserList: React.FC = () => {
         if (!response.ok) {
           throw new Error(`Error fetching users: ${response.statusText}`);
         }
+        // Convert response into JSON format and update state
         const data: User[] = await response.json();
         setUsers(data);
       } catch (err: any) {
@@ -32,6 +38,7 @@ const UserList: React.FC = () => {
     fetchUsers();
   }, []);
 
+  // Show a loading message while data is being fetched
   if (loading) {
     return (
       <div
@@ -55,7 +62,7 @@ const UserList: React.FC = () => {
       </div>
     );
   }
-
+   // Show an error message if the API request fails
   if (error) {
     return (
       <div
